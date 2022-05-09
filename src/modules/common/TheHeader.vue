@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import IconFile from "@/modules/icons/IconFile.vue";
+import MobileNavBar from "./MobileNavBar.vue";
 
 const menuItems = [
   { name: "home", displayName: "Home" },
@@ -22,7 +23,7 @@ const changeMenuItem = (menuItemName: string) => {
       <img src="@/assets/logo.svg" alt="logo" class="w-12" />
       <h2 class="text-2xl text-neutral-500 font-fancy">Murphy D. Facey</h2>
     </div>
-    <nav class="flex ml-auto items-center">
+    <nav class="hidden lg:flex ml-auto items-center">
       <ul class="flex gap-x-3">
         <li
           v-for="(item, index) in menuItems"
@@ -45,6 +46,8 @@ const changeMenuItem = (menuItemName: string) => {
         Download Resume
       </button>
     </nav>
+
+    <mobile-nav-bar class="block lg:hidden" />
   </header>
 </template>
 
